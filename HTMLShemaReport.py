@@ -1,3 +1,4 @@
+#coding=utf-8
 from wb import *
 import grt
 from mforms import Utilities, FileChooser
@@ -43,8 +44,8 @@ def htmlDataDictionary(catalog):
         }
         th {
         font-weight: bold;
-        background: #000000;
-        color: white;
+        background: #F0F0F0;
+        color: #103362;
         }
         td {
         background: #FFFFFF;
@@ -62,19 +63,17 @@ def htmlDataDictionary(catalog):
       print >>htmlFile, "<tr><td>Table Comments</td><td colspan=\"6\">%s</td></tr>" % (table.comment)
       print >>htmlFile, """<tr><td colspan=\"7\">Columns</td></tr>
         <tr>
-        <th>Name</th>
-        <th>Data Type</th>
-        <th>Nullable</th>
-        <th>PK</th>
-        <th>FK</th>
-        <th>Default</th>
-        <th>Comment</th>
+        <th>字典名</th>
+        <th>数据类型</th>
+        <th>可否为NULL</th>
+        <th>是否是主键</th>
+        <th>默认值</th>
+        <th>备注</th>
         </tr>"""
       for column in table.columns:
         pk = ('No', 'Yes')[bool(table.isPrimaryKeyColumn(column))]
-        fk = ('No', 'Yes')[bool(table.isForeignKeyColumn(column))]
         nn = ('No', 'Yes')[bool(column.isNotNull)]
-        print >>htmlFile, "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (column.name,column.formattedType,nn,pk,fk,column.defaultValue,column.comment)
+        print >>htmlFile, "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (column.name,column.formattedType,nn,pk,column.defaultValue,column.comment)
       print >>htmlFile, "</table><a href=\"#home\">Table List </a></br>"
     print >>htmlFile, "</body></html>"
     Utilities.show_message("Report generated", "HTML Report format from current model generated", "OK","","")
