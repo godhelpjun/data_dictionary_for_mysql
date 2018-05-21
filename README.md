@@ -1,0 +1,2 @@
+# data_dictionary_for_mysql
+mysql生成数据字典
