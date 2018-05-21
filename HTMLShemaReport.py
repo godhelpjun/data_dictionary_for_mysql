@@ -63,7 +63,7 @@ def htmlDataDictionary(catalog):
       print >>htmlFile, "<tr><td>Table Comments</td><td colspan=\"6\">%s</td></tr>" % (table.comment)
       print >>htmlFile, """<tr><td colspan=\"7\">Columns</td></tr>
         <tr>
-        <th>字典名</th>
+        <th>字段名</th>
         <th>数据类型</th>
         <th>可否为NULL</th>
         <th>是否是主键</th>
