@@ -6,3 +6,7 @@
 此插件利用EER Diagram生成数据字典，不过你可以很方便的根据sql脚本或现有数据库生成。
 
 MySQL Workbench商业版才有类似的更强订制化功能，目测文档完全也可以实现，具体可以参考：https://dev.mysql.com/doc/workbench/en/wb-model-reporting.html ，因为我是社区版就不多介绍了。
+
+效果如下：
+
+![img](QQ20180521-134012@2x.png)
